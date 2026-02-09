@@ -531,6 +531,23 @@ app.get('/.well-known/oauth-protected-resource', (req, res) => {
   });
 });
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    app: 'K-Beauty MCP Server for ChatGPT',
+    status: 'running',
+    version: '1.0.0',
+    endpoints: {
+      mcp: '/mcp (POST)',
+      health: '/health (GET)',
+      docs: '/docs (GET)',
+      oauth_config: '/.well-known/openid-configuration (GET)',
+      oauth_protected_resource: '/.well-known/oauth-protected-resource (GET)'
+    },
+    description: 'Skincare routine and product recommendation service with OAuth 2.0 authentication'
+  });
+});
+
 // Health Check
 app.get('/health', (req, res) => {
   res.json({
