@@ -6,7 +6,7 @@
     "start": "node server-oauth.cjs",
     "dev": "nodemon server-oauth.cjs",
     "http": "node http-server.cjs",
-    "build": "tsc",
+    "build": "echo 'No build needed - using JS directly'",
     "install-oauth": "npm install jsonwebtoken jwks-rsa dotenv"
   },
   "dependencies": {
