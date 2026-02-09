@@ -558,6 +558,17 @@ app.get('/health', (req, res) => {
   });
 });
 
+// MCP Status (GET)
+app.get('/mcp', (req, res) => {
+  res.json({
+    status: 'ready',
+    method: 'Use POST /mcp for MCP protocol requests',
+    version: '2024-11-05',
+    tools_count: toolDefinitions.length,
+    tools: toolDefinitions.map(t => t.name)
+  });
+});
+
 // MCP Protocol Handler (HTTP version)
 app.post('/mcp', async (req, res) => {
   try {
